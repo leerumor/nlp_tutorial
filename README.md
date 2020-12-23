@@ -4,7 +4,7 @@
 
 TODO:
 1. [系统入门方法](#para1)
-2. 各任务模型list汇总（doing）：文本分类、文本匹配、序列标注、文本生成、语言模型
+2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、文本匹配、序列标注、文本生成、语言模型
 3. 文本分类综述&代码&技巧
 4. 文本匹配综述&代码&技巧
 5. 序列标注综述&代码&技巧
@@ -82,23 +82,23 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
 
 **P.S. 对照文首脑图看效果更佳**
 
-## 文本分类
+## <a id="para2cls"/>文本分类
 
-<table border="0" cellpadding="0" cellspacing="0" width="505" style="border-collapse:
- collapse;table-layout:fixed;width:379pt">
+<table border="0" cellpadding="0" cellspacing="0" width="540" style="border-collapse:
+ collapse;table-layout:fixed;width:405pt">
  <colgroup><col class="xl65" width="95" style="mso-width-source:userset;mso-width-alt:3029;
  width:71pt">
  <col class="xl65" width="65" style="mso-width-source:userset;mso-width-alt:2090;
  width:49pt">
- <col class="xl65" width="133" style="mso-width-source:userset;mso-width-alt:4266;
- width:100pt">
+ <col class="xl65" width="168" style="mso-width-source:userset;mso-width-alt:5376;
+ width:126pt">
  <col class="xl65" width="125" style="mso-width-source:userset;mso-width-alt:4010;
  width:94pt">
  <col class="xl65" width="87" style="width:65pt">
  </colgroup><tbody><tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" width="95" style="height:16.0pt;width:71pt">Model</td>
   <td class="xl66" width="65" style="border-left:none;width:49pt">Year</td>
-  <td class="xl66" width="133" style="border-left:none;width:100pt">Method</td>
+  <td class="xl66" width="168" style="border-left:none;width:126pt">Method</td>
   <td class="xl66" width="125" style="border-left:none;width:94pt">Venue</td>
   <td class="xl66" width="87" style="border-left:none;width:65pt">Code</td>
  </tr>
@@ -106,28 +106,28 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
   <td rowspan="4" height="84" class="xl67" style="border-bottom:.5pt solid black;
   height:64.0pt;border-top:none">ReNN</td>
   <td class="xl66" style="border-top:none;border-left:none">2011</td>
-  <td class="xl66" style="border-top:none;border-left:none">RAE</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://ai.stanford.edu/~ang/papers/emnlp11-RecursiveAutoencodersSentimentDistributions.pdf" target="_parent">RAE</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/vin00/Semi-Supervised-Recursive-Autoencoders-for-Predicting-Sentiment-Distributions" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2012</td>
-  <td class="xl66" style="border-top:none;border-left:none">MV-RNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://ai.stanford.edu/~ang/papers/emnlp12-SemanticCompositionalityRecursiveMatrixVectorSpaces.pdf" target="_parent">MV-RNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/github-pengge/MV_RNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2013</td>
-  <td class="xl66" style="border-top:none;border-left:none">RNTN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf" target="_parent">RNTN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/pondruska/DeepSentiment" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2014</td>
-  <td class="xl66" style="border-top:none;border-left:none">DeepRNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://papers.nips.cc/paper/5275-global-belief-recursive-neural-networks.pdf" target="_parent">DeepRNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
@@ -135,243 +135,243 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
   <td rowspan="2" height="42" class="xl67" style="border-bottom:.5pt solid black;
   height:32.0pt;border-top:none">MLP</td>
   <td class="xl66" style="border-top:none;border-left:none">2014</td>
-  <td class="xl66" style="border-top:none;border-left:none">Paragraph-Vec</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://proceedings.mlr.press/v32/le14.html" target="_parent">Paragraph-Vec</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICML</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/inejc/paragraph-vectors" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">DAN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.3115/v1/p15-1162" target="_parent">DAN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/miyyer/dan" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="11" height="231" class="xl67" style="border-bottom:.5pt solid black;
   height:176.0pt;border-top:none">RNN</td>
   <td class="xl66" style="border-top:none;border-left:none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">Tree-LSTM</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.3115/v1/p15-1150" target="_parent">Tree-LSTM</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/stanfordnlp/treelstm" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">S-LSTM</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://proceedings.mlr.press/v37/zhub15.pdf" target="_parent">S-LSTM</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICML</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">TextRCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9745" target="_parent">TextRCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/roomylee/rcnn-text-classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">MT-LSTM</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.696.1430&amp;rep=rep1&amp;type=pdf" target="_parent">MT-LSTM</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/AlexAntn/MTLSTM" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">oh-2LSTMp</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.researchgate.net/publication/303521296_Adversarial_Training_Methods_for_Semi-Supervised_Text_Classification" target="_parent">oh-2LSTMp</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICML</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://riejohnson.com/cnn_20download.html" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">BLSTM-2DCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/C16-1329.pdf" target="_parent">BLSTM-2DCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">COLING</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/ManuelVs/NNForTextClassification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
   <td class="xl66" style="border-top:none;border-left:none">Multi-Task</td>
   <td class="xl66" style="border-top:none;border-left:none">IJCAI</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/baixl/text_classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">DeepMoji</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D17-1169.pdf" target="_parent">DeepMoji</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/bfelbo/DeepMoji" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">TopicRNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://openreview.net/forum?id=rJbbOLcex" target="_parent">TopicRNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICML</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/dangitstam/topic-rnn" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">Miyato et al.</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1605.07725" target="_parent">Miyato et al.</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/tensorflow/models/tree/master/adversarial_text" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">RNN-Capsule</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://link.springer.com/article/10.1007/s42979-020-0076-y" target="_parent">RNN-Capsule</a></td>
   <td class="xl66" style="border-top:none;border-left:none">TheWebConf</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/wangjiosw/Sentiment-Analysis-by-Capsules" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="10" height="210" class="xl67" style="border-bottom:.5pt solid black;
   height:160.0pt;border-top:none">CNN</td>
   <td class="xl66" style="border-top:none;border-left:none">2014</td>
-  <td class="xl66" style="border-top:none;border-left:none">TextCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D14-1181.pdf" target="_parent">TextCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/alexander-rakhlin/CNN-for-Sentence-Classification-in-Keras" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2014</td>
-  <td class="xl66" style="border-top:none;border-left:none">DCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.3115/v1/p14-1062" target="_parent">DCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/kinimod23/ATS_Project" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2015</td>
-  <td class="xl66" style="border-top:none;border-left:none">CharCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classification" target="_parent">CharCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/mhjabreel/CharCNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">SeqTextRCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1603.03827" target="_parent">SeqTextRCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/ilimugur/short-text-classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">XML-CNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="http://nyc.lti.cs.cmu.edu/yiming/Publications/jliu-sigir17.pdf" target="_parent">XML-CNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">SIGIR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/siddsax/XML-CNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">DPCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.18653/v1/P17-1052" target="_parent">DPCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/Cheneng/DPCNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">KPCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.ijcai.org/Proceedings/2017/0406.pdf" target="_parent">KPCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">IJCAI</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">TextCapsule</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.18653/v1/d18-1350" target="_parent">TextCapsule</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/andyweizhao/capsule_text_classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">HFT-CNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D18-1093.pdf" target="_parent">HFT-CNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/ShimShim46/HFT-CNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2020</td>
-  <td class="xl66" style="border-top:none;border-left:none">Bao et al.</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1908.06039v1" target="_parent">Bao et al.</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/YujiaBao/Distributional-Signatures" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="11" height="231" class="xl67" style="border-bottom:.5pt solid black;
   height:176.0pt;border-top:none">Attention</td>
   <td class="xl66" style="border-top:none;border-left:none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">HAN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.18653/v1/n16-1174" target="_parent">HAN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/richliao/textClassifier" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">BI-Attention</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D16-1024.pdf" target="_parent">BI-Attention</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/JRC1995/Abstractive-Summarization" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2016</td>
-  <td class="xl66" style="border-top:none;border-left:none">LSTMN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://doi.org/10.18653/v1/d16-1053" target="_parent">LSTMN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2017</td>
-  <td class="xl66" style="border-top:none;border-left:none">Lin et al.</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1703.03130" target="_parent">Lin et al.</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/kaushalshetty/Structured-Self-Attention" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">SCM</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/C18-1330/" target="_parent">SCM</a></td>
   <td class="xl66" style="border-top:none;border-left:none">COLING</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/lancopku/SGM" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
   <td class="xl66" style="border-top:none;border-left:none">ELMo</td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/flairNLP/flair" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">BiBloSA</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1804.00857" target="_parent">BiBloSA</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/galsang/BiBloSA-pytorch" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">AttentionXML</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/pdf/1811.01727v3.pdf" target="_parent">AttentionXML</a></td>
   <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/yourh/AttentionXML" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">HAPN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D19-1045/" target="_parent">HAPN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">Proto-HATT</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://gaotianyu1350.github.io/assets/aaai2019_hatt_paper.pdf" target="_parent">Proto-HATT</a></td>
   <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/thunlp/HATT-Proto" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">STCKA</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/pdf/1902.08050.pdf" target="_parent">STCKA</a></td>
   <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/AIRobotZhang/STCKA" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="5" height="105" class="xl67" style="border-bottom:.5pt solid black;
@@ -379,78 +379,79 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
   <td class="xl66" style="border-top:none;border-left:none">2019</td>
   <td class="xl66" style="border-top:none;border-left:none">BERT</td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/google-research/bert" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
   <td class="xl66" style="border-top:none;border-left:none">Sun et al.</td>
   <td class="xl66" style="border-top:none;border-left:none">CCL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/xuyige/BERT4doc-Classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
   <td class="xl66" style="border-top:none;border-left:none">XLNet</td>
   <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/zihangdai/xlnet" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
   <td class="xl66" style="border-top:none;border-left:none">RoBERTa</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/pytorch/fairseq" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2020</td>
   <td class="xl66" style="border-top:none;border-left:none">ALBERT</td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/google-research/ALBERT" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="6" height="126" class="xl67" style="border-bottom:.5pt solid black;
   height:96.0pt;border-top:none">GNN</td>
   <td class="xl66" style="border-top:none;border-left:none">2018</td>
-  <td class="xl66" style="border-top:none;border-left:none">DGCNN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://dl.acm.org/doi/10.1145/3178876.3186005" target="_parent">DGCNN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">TheWebConf</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/HKUST-KnowComp/DeepGraphCNNforTexts" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">TextGCN</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/4725" target="_parent">TextGCN</a></td>
   <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/yao8839836/text_gcn" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">SGC</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/pdf/1902.07153.pdf" target="_parent">SGC</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICML</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/Tiiiger/SGC" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">Huang et al.</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://www.aclweb.org/anthology/D19-1345.pdf" target="_parent">Huang
+  et al.</a></td>
   <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/LindgeW/TextLevelGNN" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2019</td>
-  <td class="xl66" style="border-top:none;border-left:none">Peng et al.</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/1906.04898" target="_parent">Peng et al.</a></td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
   <td class="xl66" style="border-top:none;border-left:none">　</td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
   none">2020</td>
-  <td class="xl66" style="border-top:none;border-left:none">MAGNET</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://arxiv.org/abs/2003.11644" target="_parent">MAGNET</a></td>
   <td class="xl66" style="border-top:none;border-left:none">ICAART</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/monk1337/MAGnet" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td rowspan="3" height="63" class="xl67" style="border-bottom:.5pt solid black;
@@ -458,7 +459,7 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
   <td class="xl66" style="border-top:none;border-left:none">2017</td>
   <td class="xl66" style="border-top:none;border-left:none">Miyato et al.</td>
   <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/TobiasLee/Text-Classification" target="_parent">link</a></td>
  </tr>
  <tr height="21" style="height:16.0pt">
   <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
@@ -472,13 +473,13 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
   none">2019</td>
   <td class="xl66" style="border-top:none;border-left:none">Zhang et al.</td>
   <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
-  <td class="xl66" style="border-top:none;border-left:none">link</td>
+  <td class="xl70" style="border-top:none;border-left:none"><a href="https://github.com/JingqingZ/KG4ZeroShotText" target="_parent">link</a></td>
  </tr>
  <!--[if supportMisalignedColumns]-->
  <tr height="0" style="display:none">
   <td width="95" style="width:71pt"></td>
   <td width="65" style="width:49pt"></td>
-  <td width="133" style="width:100pt"></td>
+  <td width="168" style="width:126pt"></td>
   <td width="125" style="width:94pt"></td>
   <td width="87" style="width:65pt"></td>
  </tr>
