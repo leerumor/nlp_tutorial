@@ -3,12 +3,16 @@
 本教程致力于帮助同学们快速入门NLP，并掌握各个任务的SOTA模型。
 
 TODO:
-1. ~系统入门方法~
-2. ~各任务模型list汇总~
-3. 文本分类、文本匹配、序列标注、文本生成、语言模型系列SOTA串讲
+1. [系统入门方法](#para1)
+2. 各任务模型list汇总（doing）：文本分类、文本匹配、序列标注、文本生成、语言模型
+3. 文本分类综述&代码&技巧
+4. 文本匹配综述&代码&技巧
+5. 序列标注综述&代码&技巧
+6. 文本生成综述&代码&技巧
+7. 语言模型综述&代码&技巧
 
 
-# 如何系统地入门
+# <a id="para1"/>如何系统地入门
 
 机器学习是一门既重理论又重实践的学科，想一口吃下这个老虎是不可能的，因此学习应该是个**循环且逐渐细化**的过程。
 
@@ -38,13 +42,13 @@ TODO:
 
 快速了解经典任务脉络可以看综述，建议先了解一两个该任务的经典模型再去看，否则容易云里雾里：
 
-- 2020 A Survey on Text Classification: From Shallow to Deep Learning
-- 2020 A Survey on Recent Advances in Sequence Labeling from Deep Learning Models 
-- 2020 Evolution of Semantic Similarity - A Survey
-- 2017 Neural text generation: A practical guide 
-- 2018 Neural Text Generation: Past, Present and Beyond
-- 2019 The survey: Text generation models in deep learning
-- 2020 Efficient Transformers: A Survey
+- [2020 A Survey on Text Classification: From Shallow to Deep Learning](https://arxiv.org/pdf/2008.00364v2.pdf)
+- [2020 A Survey on Recent Advances in Sequence Labeling from Deep Learning Models](https://arxiv.org/pdf/2011.06727)
+- [2020 Evolution of Semantic Similarity - A Survey](https://arxiv.org/pdf/2004.13820)
+- [2017 Neural text generation: A practical guide](https://arxiv.org/abs/1711.09534)
+- [2018 Neural Text Generation: Past, Present and Beyond](https://arxiv.org/pdf/1803.07133.pdf)
+- [2019 The survey: Text generation models in deep learning](https://www.sciencedirect.com/science/article/pii/S1319157820303360)
+- [2020 Efficient Transformers: A Survey](https://arxiv.org/abs/2009.06732)
 
 ### 文本分类
 
@@ -77,3 +81,414 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
 # 各任务模型list汇总
 
 **P.S. 对照文首脑图看效果更佳**
+
+## 文本分类
+
+<table border="0" cellpadding="0" cellspacing="0" width="505" style="border-collapse:
+ collapse;table-layout:fixed;width:379pt">
+ <colgroup><col class="xl65" width="95" style="mso-width-source:userset;mso-width-alt:3029;
+ width:71pt">
+ <col class="xl65" width="65" style="mso-width-source:userset;mso-width-alt:2090;
+ width:49pt">
+ <col class="xl65" width="133" style="mso-width-source:userset;mso-width-alt:4266;
+ width:100pt">
+ <col class="xl65" width="125" style="mso-width-source:userset;mso-width-alt:4010;
+ width:94pt">
+ <col class="xl65" width="87" style="width:65pt">
+ </colgroup><tbody><tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" width="95" style="height:16.0pt;width:71pt">Model</td>
+  <td class="xl66" width="65" style="border-left:none;width:49pt">Year</td>
+  <td class="xl66" width="133" style="border-left:none;width:100pt">Method</td>
+  <td class="xl66" width="125" style="border-left:none;width:94pt">Venue</td>
+  <td class="xl66" width="87" style="border-left:none;width:65pt">Code</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="4" height="84" class="xl67" style="border-bottom:.5pt solid black;
+  height:64.0pt;border-top:none">ReNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">2011</td>
+  <td class="xl66" style="border-top:none;border-left:none">RAE</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2012</td>
+  <td class="xl66" style="border-top:none;border-left:none">MV-RNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2013</td>
+  <td class="xl66" style="border-top:none;border-left:none">RNTN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2014</td>
+  <td class="xl66" style="border-top:none;border-left:none">DeepRNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="2" height="42" class="xl67" style="border-bottom:.5pt solid black;
+  height:32.0pt;border-top:none">MLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">2014</td>
+  <td class="xl66" style="border-top:none;border-left:none">Paragraph-Vec</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">DAN</td>
+  <td class="xl66" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="11" height="231" class="xl67" style="border-bottom:.5pt solid black;
+  height:176.0pt;border-top:none">RNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">Tree-LSTM</td>
+  <td class="xl66" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">S-LSTM</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">TextRCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">MT-LSTM</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">oh-2LSTMp</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">BLSTM-2DCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">COLING</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">Multi-Task</td>
+  <td class="xl66" style="border-top:none;border-left:none">IJCAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">DeepMoji</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">TopicRNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">Miyato et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">RNN-Capsule</td>
+  <td class="xl66" style="border-top:none;border-left:none">TheWebConf</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="10" height="210" class="xl67" style="border-bottom:.5pt solid black;
+  height:160.0pt;border-top:none">CNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">2014</td>
+  <td class="xl66" style="border-top:none;border-left:none">TextCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2014</td>
+  <td class="xl66" style="border-top:none;border-left:none">DCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2015</td>
+  <td class="xl66" style="border-top:none;border-left:none">CharCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">SeqTextRCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">XML-CNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">SIGIR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">DPCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">KPCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">IJCAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">TextCapsule</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">HFT-CNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2020</td>
+  <td class="xl66" style="border-top:none;border-left:none">Bao et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="11" height="231" class="xl67" style="border-bottom:.5pt solid black;
+  height:176.0pt;border-top:none">Attention</td>
+  <td class="xl66" style="border-top:none;border-left:none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">HAN</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">BI-Attention</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2016</td>
+  <td class="xl66" style="border-top:none;border-left:none">LSTMN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">Lin et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">SCM</td>
+  <td class="xl66" style="border-top:none;border-left:none">COLING</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">ELMo</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">BiBloSA</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">AttentionXML</td>
+  <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">HAPN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">Proto-HATT</td>
+  <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">STCKA</td>
+  <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="5" height="105" class="xl67" style="border-bottom:.5pt solid black;
+  height:80.0pt;border-top:none">Transformer</td>
+  <td class="xl66" style="border-top:none;border-left:none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">BERT</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">Sun et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">CCL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">XLNet</td>
+  <td class="xl66" style="border-top:none;border-left:none">NIPS</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">RoBERTa</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2020</td>
+  <td class="xl66" style="border-top:none;border-left:none">ALBERT</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="6" height="126" class="xl67" style="border-bottom:.5pt solid black;
+  height:96.0pt;border-top:none">GNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">DGCNN</td>
+  <td class="xl66" style="border-top:none;border-left:none">TheWebConf</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">TextGCN</td>
+  <td class="xl66" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">SGC</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">Huang et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">Peng et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2020</td>
+  <td class="xl66" style="border-top:none;border-left:none">MAGNET</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICAART</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="3" height="63" class="xl67" style="border-bottom:.5pt solid black;
+  height:48.0pt;border-top:none">Others</td>
+  <td class="xl66" style="border-top:none;border-left:none">2017</td>
+  <td class="xl66" style="border-top:none;border-left:none">Miyato et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2018</td>
+  <td class="xl66" style="border-top:none;border-left:none">TMN</td>
+  <td class="xl66" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl66" style="border-top:none;border-left:none">　</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl66" style="height:16.0pt;border-top:none;border-left:
+  none">2019</td>
+  <td class="xl66" style="border-top:none;border-left:none">Zhang et al.</td>
+  <td class="xl66" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl66" style="border-top:none;border-left:none">link</td>
+ </tr>
+ <!--[if supportMisalignedColumns]-->
+ <tr height="0" style="display:none">
+  <td width="95" style="width:71pt"></td>
+  <td width="65" style="width:49pt"></td>
+  <td width="133" style="width:100pt"></td>
+  <td width="125" style="width:94pt"></td>
+  <td width="87" style="width:65pt"></td>
+ </tr>
+ <!--[endif]-->
+</tbody></table>
+
+## 文本匹配
+
+## 序列标注
+
+## 文本生成
+
+## 语言模型
