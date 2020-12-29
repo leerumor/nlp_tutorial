@@ -3,7 +3,7 @@
 本教程致力于帮助同学们快速入门NLP，并掌握各个任务的SOTA模型。
 
 1. [系统入门方法](#para1)
-2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、文本匹配、序列标注、文本生成、语言模型
+2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、文本匹配、[序列标注](#para2sl)、文本生成、语言模型
 3. 文本分类综述&代码&技巧
 4. 文本匹配综述&代码&技巧
 5. 序列标注综述&代码&技巧
@@ -487,7 +487,490 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
 
 ## 文本匹配
 
-## 序列标注
+## <a id="para2sl"/> 序列标注
+
+<table border="0" cellpadding="0" cellspacing="0" width="1315" style="border-collapse:
+ collapse;table-layout:fixed;width:985pt">
+ <colgroup><col class="xl67" width="87" span="3" style="width:65pt">
+ <col class="xl67" width="133" style="mso-width-source:userset;mso-width-alt:4266;
+ width:100pt">
+ <col class="xl67" width="192" style="mso-width-source:userset;mso-width-alt:6144;
+ width:144pt">
+ <col class="xl67" width="147" style="mso-width-source:userset;mso-width-alt:4693;
+ width:110pt">
+ <col class="xl67" width="192" style="mso-width-source:userset;mso-width-alt:6144;
+ width:144pt">
+ <col class="xl67" width="187" style="mso-width-source:userset;mso-width-alt:5973;
+ width:140pt">
+ <col class="xl67" width="203" style="mso-width-source:userset;mso-width-alt:6485;
+ width:152pt">
+ </colgroup><tbody><tr height="21" style="height:16.0pt">
+  <td rowspan="2" height="42" class="xl68" width="87" style="height:32.0pt;width:65pt">Ref</td>
+  <td rowspan="2" class="xl69" width="87" style="border-bottom:.5pt solid black;
+  width:65pt">Year</td>
+  <td rowspan="2" class="xl69" width="87" style="border-bottom:.5pt solid black;
+  width:65pt">Venue</td>
+  <td colspan="3" class="xl68" width="472" style="border-left:none;width:354pt">Embedding
+  Module</td>
+  <td rowspan="2" class="xl68" width="192" style="width:144pt">Context Encoder</td>
+  <td rowspan="2" class="xl68" width="187" style="width:140pt">Inference Module</td>
+  <td rowspan="2" class="xl68" width="203" style="width:152pt">Tasks</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl68" style="height:16.0pt;border-top:none;border-left:
+  none">external input</td>
+  <td class="xl68" style="border-top:none;border-left:none">word embedding</td>
+  <td class="xl68" style="border-top:none;border-left:none">character-level</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1603.01354" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl68" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1805.08237" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/N18-1089.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/pdf/1709.04109.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM+LM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1604.05529" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Polyglot</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/P17-1194.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Bi-LSTM+LM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1705.00108" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl68" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM+pre LM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://alanakbik.github.io/papers/coling2018.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">COLING</td>
+  <td class="xl68" style="border-top:none;border-left:none">Pre LM emb</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.ijcai.org/Proceedings/2018/0637.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">IJCAI</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">LSTM+Softmax</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/P18-2038.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM+LM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF+Semi-CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/C18-1061.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">COLING</td>
+  <td class="xl68" style="border-top:none;border-left:none">Spelling, gaz</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Mo-BiLSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl68" style="border-top:none;border-left:none">NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/P18-2012.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Parallel Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl68" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://www.cs.cmu.edu/~./wcohen/postscript/iclr-2017-transfer.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna, Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-GRU</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-GRU</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://www.cs.cmu.edu/~lingwang/papers/emnlp2015.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2015</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Trained on wikipedia</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/Q16-1026.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">Cap, lexicon</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl68" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/C16-1030.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">COLING</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/D18-1279/" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">InNet</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/P17-2027/" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">ACL</td>
+  <td class="xl68" style="border-top:none;border-left:none">Spelling, gaz</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">INN</td>
+  <td class="xl68" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1809.10835" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">EL-CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">Citation field
+  extraction</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/D16-1082.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Trained with
+  skip-gram</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Skip-chain CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">Clinical entities
+  detection</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/D18-1310.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">Word shapes, gaz</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://jmlr.org/papers/volume12/collobert11a/collobert11a.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2011</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">Cap, gaz</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking,
+  SRL</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://www.cips-cl.org/static/anthology/CCL-2017/CCL-17-071.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">CCL</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Gated-CNN</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1702.02098" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">ID-CNN</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1603.01360" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2016</td>
+  <td class="xl68" style="border-top:none;border-left:none">NAACL</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/pdf/1508.01991v1.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2015</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">Spelling, gaz</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://proceedings.mlr.press/v32/santos14.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2014</td>
+  <td class="xl68" style="border-top:none;border-left:none">ICML</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl68" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/pdf/1701.04027.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Senna</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Pointer network</td>
+  <td class="xl72" style="border-top:none;border-left:none">Chunking, slot
+  filling</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/P17-1113.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Entity relation
+  extraction</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/C18-1161.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">LS vector, cap</td>
+  <td class="xl68" style="border-top:none;border-left:none">SSKIP</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/abs/1707.05928" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">ICLR</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.ijcai.org/Proceedings/2018/0579.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">IJCAI</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-GRU</td>
+  <td class="xl72" style="border-top:none;border-left:none">Pointer network</td>
+  <td class="xl72" style="border-top:none;border-left:none">Text segmentation</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/D17-1256.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">EMNLP</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://nlp.stanford.edu/pubs/dozat2017stanford.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">CoNLL</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Word2vec, Fasttext</td>
+  <td class="xl72" style="border-top:none;border-left:none">LSTM+Attention</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="http://oa.ee.tsinghua.edu.cn/~ouzhijian/pdf/ic19-NCRFT.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2019</td>
+  <td class="xl68" style="border-top:none;border-left:none">ICASSP</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">NCRF transducers</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/W18-3401.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2018</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">\</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM+AE</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Softmax</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.aclweb.org/anthology/I17-2017.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2017</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">Lexicons</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM</td>
+  <td class="xl72" style="border-top:none;border-left:none">Segment-level CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://arxiv.org/pdf/1907.05611v2.pdf" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2019</td>
+  <td class="xl68" style="border-top:none;border-left:none">AAAI</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">GRN+CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">NER</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" class="xl71" style="height:16.0pt;border-top:none"><a href="https://www.sciencedirect.com/science/article/pii/S0031320320304398" target="_parent">link</a></td>
+  <td class="xl68" style="border-top:none;border-left:none">2020</td>
+  <td class="xl68" style="border-top:none;border-left:none">　</td>
+  <td class="xl72" style="border-top:none;border-left:none">\</td>
+  <td class="xl68" style="border-top:none;border-left:none">Glove</td>
+  <td class="xl72" style="border-top:none;border-left:none">CNN</td>
+  <td class="xl72" style="border-top:none;border-left:none">Bi-LSTM+SA</td>
+  <td class="xl72" style="border-top:none;border-left:none">CRF</td>
+  <td class="xl72" style="border-top:none;border-left:none">POS, NER, chunking</td>
+ </tr>
+ <!--[if supportMisalignedColumns]-->
+ <tr height="0" style="display:none">
+  <td width="87" style="width:65pt"></td>
+  <td width="87" style="width:65pt"></td>
+  <td width="87" style="width:65pt"></td>
+  <td width="133" style="width:100pt"></td>
+  <td width="192" style="width:144pt"></td>
+  <td width="147" style="width:110pt"></td>
+  <td width="192" style="width:144pt"></td>
+  <td width="187" style="width:140pt"></td>
+  <td width="203" style="width:152pt"></td>
+ </tr>
+ <!--[endif]-->
+</tbody></table>
 
 ## 文本生成
 
