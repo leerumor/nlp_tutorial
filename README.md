@@ -3,7 +3,7 @@
 本教程致力于帮助同学们快速入门NLP，并掌握各个任务的SOTA模型。
 
 1. [系统入门方法](#para1)
-2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、文本匹配(可先参考脑图)、[序列标注](#para2sl)、文本生成、语言模型(可先参考脑图)
+2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、文本匹配(#para2sts)、[序列标注](#para2sl)、文本生成、语言模型(可先参考脑图)
 3. 文本分类综述&代码&技巧
 4. 文本匹配综述&代码&技巧
 5. 序列标注综述&代码&技巧
@@ -485,7 +485,146 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
  <!--[endif]-->
 </tbody></table>
 
-## 文本匹配
+## <a id="para2sts"/>  文本匹配
+
+<table border="0" cellpadding="0" cellspacing="0" width="505" style="border-collapse:
+ collapse;table-layout:fixed;width:378pt">
+ <colgroup><col width="87" span="2" style="width:65pt">
+ <col width="157" style="mso-width-source:userset;mso-width-alt:5034;width:118pt">
+ <col width="87" span="2" style="width:65pt">
+ </colgroup><tbody><tr height="21" style="height:16.0pt">
+  <td height="21" width="87" style="height:16.0pt;width:65pt">Structure</td>
+  <td width="87" style="width:65pt">Year</td>
+  <td width="157" style="width:118pt">Model</td>
+  <td width="87" style="width:65pt">Venue</td>
+  <td width="87" style="width:65pt">Ref</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="13" height="273" class="xl67" style="height:208.0pt">Siamese</td>
+  <td align="right">2013</td>
+  <td>DSSM</td>
+  <td>CIKM</td>
+  <td class="xl66"><a href="https://www.microsoft.com/en-us/research/publication/learning-deep-structured-semantic-models-for-web-search-using-clickthrough-data/" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2015</td>
+  <td>SiamCNN</td>
+  <td>ASRU</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1508.01585" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2015</td>
+  <td>Skip-Thought</td>
+  <td>NIPS</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1506.06726" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2016</td>
+  <td>Multi-View</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/D16-1036.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2016</td>
+  <td>FastSent</td>
+  <td>ACL</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/N16-1162.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2016</td>
+  <td>SiamLSTM</td>
+  <td>AAAI</td>
+  <td class="xl66"><a href="https://dl.acm.org/doi/10.5555/3016100.3016291" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2017</td>
+  <td>Joint-Many</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1611.01587" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2017</td>
+  <td>InferSent</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1705.02364" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2017</td>
+  <td>SSE</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1708.02312" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2018</td>
+  <td>GenSen</td>
+  <td>ICLR</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1804.00079" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2018</td>
+  <td>USE</td>
+  <td>ACL</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1803.11175v2" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td>Sentence-BERT</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/D19-1410.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2020</td>
+  <td>BERT-flow</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/2011.05864" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td rowspan="6" height="126" class="xl67" style="height:96.0pt">Interaction</td>
+  <td align="right">2016</td>
+  <td>DecAtt</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1606.01933" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2016</td>
+  <td>PWIM</td>
+  <td>ACL</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/N16-1108.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2017</td>
+  <td>ESIM</td>
+  <td>ACL</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/P17-1152.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2018</td>
+  <td>DIIN</td>
+  <td>ICLR</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1709.04348" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td>HCAN</td>
+  <td>EMNLP</td>
+  <td class="xl66"><a href="https://cs.uwaterloo.ca/~jimmylin/publications/Rao_etal_EMNLP2019.pdf" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td>RE2</td>
+  <td>ACL</td>
+  <td class="xl66"><a href="https://www.aclweb.org/anthology/P19-1465/" target="_parent">link</a></td>
+ </tr>
+ <!--[if supportMisalignedColumns]-->
+ <tr height="0" style="display:none">
+  <td width="87" style="width:65pt"></td>
+  <td width="87" style="width:65pt"></td>
+  <td width="157" style="width:118pt"></td>
+  <td width="87" style="width:65pt"></td>
+  <td width="87" style="width:65pt"></td>
+ </tr>
+ <!--[endif]-->
+</tbody></table>
 
 ## <a id="para2sl"/> 序列标注
 
