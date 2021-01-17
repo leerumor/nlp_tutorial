@@ -3,8 +3,8 @@
 本教程致力于帮助同学们快速入门NLP，并掌握各个任务的SOTA模型。
 
 1. [系统入门方法](#para1)
-2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、[文本匹配](#para2sts)、[序列标注](#para2sl)、[文本生成](#para2seq2seq)(todo)、[语言模型](#para2lm)
-3. 各任务综述&技巧（todo）
+2. 各任务模型list汇总：[文本分类](#para2cls)、[文本匹配](#para2sts)、[序列标注](#para2sl)、[文本生成](#para2seq2seq)(todo)、[语言模型](#para2lm)
+3. 各任务综述&技巧(todo)
 
 
 # <a id="para1"/>如何系统地入门
