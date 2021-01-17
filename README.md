@@ -3,7 +3,7 @@
 本教程致力于帮助同学们快速入门NLP，并掌握各个任务的SOTA模型。
 
 1. [系统入门方法](#para1)
-2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、[文本匹配](#para2sts)、[序列标注](#para2sl)、[文本生成](#para2seq2seq)(todo)、[语言模型](#para2lm)(可先参考脑图)
+2. 各任务模型list汇总（doing）：[文本分类](#para2cls)、[文本匹配](#para2sts)、[序列标注](#para2sl)、[文本生成](#para2seq2seq)(todo)、[语言模型](#para2lm)
 3. 各任务综述&技巧（todo）
 
 
@@ -1110,3 +1110,77 @@ Kaggle的优点是有各种kernel可以学习，国内比赛的优点是中文�
 ## <a id="para2seq2seq"/> 文本生成
 
 ## <a id="para2lm"/> 语言模型
+
+<table border="0" cellpadding="0" cellspacing="0" width="350" style="border-collapse:
+ collapse;table-layout:fixed;width:262pt">
+ <colgroup><col width="87" style="width:65pt">
+ <col width="176" style="mso-width-source:userset;mso-width-alt:5632;width:132pt">
+ <col width="87" style="width:65pt">
+ </colgroup><tbody><tr height="21" style="height:16.0pt">
+  <td height="21" width="87" style="height:16.0pt;width:65pt">Year</td>
+  <td width="176" style="width:132pt">Model</td>
+  <td width="87" style="width:65pt">Code</td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2018</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1810.04805v2" target="_parent">BERT</a></td>
+  <td class="xl66"><a href="https://github.com/google-research/bert" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1906.08101" target="_parent">WWM</a></td>
+  <td class="xl66"><a href="https://github.com/ymcui/Chinese-BERT-wwm" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://www.jiqizhixin.com/articles/2019-03-16-3" target="_parent">Baidu ERNIE1.0</a></td>
+  <td class="xl66"><a href="https://github.com/PaddlePaddle/ERNIE" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://www.jiqizhixin.com/articles/2019-07-31-10" target="_parent">Baidu ERNIE2.0</a></td>
+  <td class="xl66"><a href="https://github.com/PaddlePaddle/ERNIE" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1907.10529" target="_parent">SpanBERT</a></td>
+  <td class="xl66"><a href="https://github.com/facebookresearch/SpanBERT" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1907.11692" target="_parent">RoBERTa</a></td>
+  <td class="xl66"><a href="https://github.com/huggingface/transformers" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1906.08237" target="_parent">XLNet</a></td>
+  <td class="xl66"><a href="https://github.com/zihangdai/xlnet" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1908.04577" target="_parent">StructBERT</a></td>
+  <td></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://openreview.net/pdf?id=r1xMH1BtvB" target="_parent">ELECTRA</a></td>
+  <td class="xl66"><a href="https://github.com/google-research/electra" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2019</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/1909.11942" target="_parent">ALBERT</a></td>
+  <td class="xl66"><a href="https://github.com/google-research/albert" target="_parent">link</a></td>
+ </tr>
+ <tr height="21" style="height:16.0pt">
+  <td height="21" align="right" style="height:16.0pt">2020</td>
+  <td class="xl66"><a href="https://arxiv.org/abs/2006.03654" target="_parent">DeBERTa</a></td>
+  <td class="xl66"><a href="https://github.com/microsoft/DeBERTa" target="_parent">link</a></td>
+ </tr>
+ <!--[if supportMisalignedColumns]-->
+ <tr height="0" style="display:none">
+  <td width="87" style="width:65pt"></td>
+  <td width="176" style="width:132pt"></td>
+  <td width="87" style="width:65pt"></td>
+ </tr>
+ <!--[endif]-->
+</tbody></table>
