@@ -11,9 +11,9 @@
 
 机器学习是一门既重理论又重实践的学科，想一口吃下这个老虎是不可能的，因此学习应该是个**循环且逐渐细化**的过程。
 
-首先要有个全局印象，知道minimum的情况下要学哪些知识点（扫码回复「入门」即可下载）：
+首先要有个全局印象，知道minimum的情况下要学哪些知识点：
 
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gly7vmtma6j30n30cnjt8.jpg)
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gn5nf8uhpxj31kq0u0n91.jpg)
 
 之后就可以开始逐个击破，但也不用死磕，控制好目标难度，先用三个月时间进行第一轮学习：
 
