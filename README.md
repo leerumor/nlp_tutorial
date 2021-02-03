@@ -1382,6 +1382,6 @@ BERT分类的优化可以尝试：
 
 文本分类是工业界最常用的任务，同时也是大多数NLPer入门做的第一个任务，我当年就是啥都不会，从训练到部署地实践了文本分类后就顺畅了。上文给出了不少模型，但实际任务中常用的也就那几个，下面是快速选型的建议：
 
-![](https://tva1.sinaimg.cn/large/008eGmZEly1gn8atgmxrvj30u00ybtgz.jpg)
+<img src="https://tva1.sinaimg.cn/large/008eGmZEly1gn8atgmxrvj30u00ybtgz.jpg" width="50%">
 
 实际上，落地时主要还是和数据的博弈。数据决定模型的上限，大多数人工标注的准确率达到95%以上就很好了，而文本分类通常会对准确率的要求更高一些，与其苦苦调参想fancy的结构，不如好好看看badcase，做一些数据增强提升模型鲁棒性更实用。
