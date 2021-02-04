@@ -12,7 +12,7 @@
 
 首先要有个全局印象，知道minimum的情况下要学哪些知识点：
 
-**下载地址**：https://wwi.lanzous.com/iIrHMl2ubed
+**学习路线下载地址**：https://wwi.lanzous.com/iIrHMl2ubed
 
 ![](https://tva1.sinaimg.cn/large/008eGmZEly1gn5nf8uhpxj31kq0u0n91.jpg)
 
