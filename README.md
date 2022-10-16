@@ -12,8 +12,6 @@
 
 首先要有个全局印象，知道minimum的情况下要学哪些知识点：
 
-**学习路线下载地址**：https://wwi.lanzous.com/iIrHMl2ubed
-
 ![](https://tva1.sinaimg.cn/large/008eGmZEly1gn5nf8uhpxj31kq0u0n91.jpg)
 
 之后就可以开始逐个击破，但也不用死磕，控制好目标难度，先用三个月时间进行第一轮学习：
